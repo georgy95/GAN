@@ -1,0 +1,67 @@
+{
+  "trainingInput": {
+    "scaleTier": "CUSTOM",
+    "masterType": "standard",
+    "runtimeVersion": "1.10",
+    "pythonVersion": "3.5",
+    "hyperparameters": {
+      "goal": "MINIMIZE",
+      "hyperparameterMetricTag": "val_binary_crossentropy",
+      "params": [
+        {
+          "parameterName": "rnn_dimension",
+          "type": "INTEGER",
+          "minValue": "32",
+          "maxValue": "196",
+          "scaleType": "UNIT_LINEAR_SCALE"
+        },
+        {
+          "parameterName": "rnn_layer_count",
+          "type": "INTEGER",
+          "minValue": "0",
+          "maxValue": "5",
+          "scaleType": "UNIT_LINEAR_SCALE"
+        },
+        {
+          "parameterName": "cell_type",
+          "type": "CATEGORICAL",
+          "categoricalValues": [
+            "lstm"
+          ]
+        },
+        {
+          "parameterName": "dropout",
+          "type": "DOUBLE",
+          "minValue": "0.0",
+          "maxValue": "0.4",
+          "scaleType": "UNIT_LINEAR_SCALE"
+        },
+        {
+          "parameterName": "rec_regularization",
+          "type": "DOUBLE",
+          "minValue": "0.01",
+          "maxValue": "0.1",
+          "scaleType": "UNIT_LINEAR_SCALE"
+        },
+        {
+          "parameterName": "emb_regularization",
+          "type": "DOUBLE",
+          "minValue": "0.001",
+          "maxValue": "0.1",
+          "scaleType": "UNIT_LINEAR_SCALE"
+        },
+        {
+          "parameterName": "kernel_regularization",
+          "type": "DOUBLE",
+          "minValue": "0.00001",
+          "maxValue": "0.01",
+          "scaleType": "UNIT_LINEAR_SCALE"
+        }
+      ],
+      "maxTrials": 40,
+      "maxParallelTrials": 2,
+      "enableTrialEarlyStopping": true
+    }
+  }
+}
+
