@@ -1,6 +1,11 @@
-# SRGAN-Keras
-Keras implementation of ["Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network"](https://arxiv.org/abs/1609.04802)
+# Keras Implementation of SRGAN
+Keras and Google Cloud Ready implementation of ["Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network"](https://arxiv.org/abs/1609.04802)
+
+Credit to https://github.com/MathiasGruber/SRGAN-Keras
+
+
 <img src='images/main_samples_with_psnr.png' width="100%" />
+
 
 ## 1. Architecture
 The generator creates a high-resolution (HR) image (4x upscaled) from a corresponding low-resolution (LR) image. The discriminator distinguishes the generated (fake) HR images from the original HR images.
@@ -24,15 +29,18 @@ The generator creates a high-resolution (HR) image (4x upscaled) from a correspo
 ## 3. Using this repository
 
 ### 3.1. Training
-A command-line interface can be found in `train.py`. To train run e.g.:
+## Local
+Create 2 folders `train`, `valid` in the  `trainer/data` directory and place your images there.
+
+Use the bash file `train.sh`. To train run e.g.:
 ```
-python train.py \
-    --train <TRAINING_IMAGES_PATH> \
-    --validation <VALIDATION_IMAGES_PATH> \
-    --scale 4 \
-    --test_path images/samples_4X \
-    --stage all
+git clone https://github.com/skiler07/GAN.git
+cd GAN
+sh train.sh local
 ```
+
+## Remote
+See `train.sh` file for more details and specify remote `job_dir`.
 
 ### 3.2. Testing
 Check the example_usage notebook: [example_usage.ipynb](./Example_Usage.ipynb)
