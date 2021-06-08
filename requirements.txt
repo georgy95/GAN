@@ -1,6 +1,6 @@
 Keras==2.2.4
 pandas==0.23.4
-Pillow==5.4.1
+Pillow==8.2.0
 psycopg2==2.7.6.1
 scikit-learn==0.20.0
 scipy==1.1.0
